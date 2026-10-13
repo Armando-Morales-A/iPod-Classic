@@ -1,0 +1,18 @@
+name: Mi primer Pipeline
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  echo-job:
+    name: Run Echo Commands
+    runs-on: self-hosted
+
+    steps:
+      - name: Step 1 - Basic Echo
+        run: echo "Hello! This is a simple GitHub Actions pipeline."
+
+      - name: Step 2 - Echo Current Date
+        run: echo "The current date and time is $(Get-Date)"
